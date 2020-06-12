@@ -1,3 +1,3 @@
 # GradleSample
 
-###Gradle插件化学习
+### Gradle插件化学习
