@@ -1,0 +1,10 @@
+// 依赖groovy插件
+plugins {
+    id 'groovy'
+}
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+}
