@@ -13,7 +13,6 @@ class ReleaseInfoTask extends DefaultTask {
         description = "release info update"
     }
     /*2：在gradle执行阶段执行*/
-
     @TaskAction
     void doAction() {
         updateVersionInfo()
@@ -27,6 +26,8 @@ class ReleaseInfoTask extends DefaultTask {
         def versionInfoMsg = project.extensions.ReleaseInfoExtensions.versionInfo;
         def fileName = project.extensions.ReleaseInfoExtensions.fileName;
         def file = project.file(fileName)
+        if (!file.exists()) file.createNewFile()
+
         // 4、将实体对象写入到 xml 文件中
         def sw = new StringWriter()
         def xmlBuilder = new MarkupBuilder(sw)
